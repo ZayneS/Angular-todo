@@ -1,7 +1,12 @@
 // server.js
 
 // set up =======================
+
+	// Express is a web framework for node.js
+	// that makes nontrivial applications easier to build
 	var express = require('express');
+
+	// Create the server instance
 	var app = express();
 	var mongoose = require('mongoose');
 	var morgan = require('morgan');
@@ -19,7 +24,13 @@
 	app.use(methodOverride());
 
 
+// routes ======================================================================
+
+require('./app/routes.js')(app);
+
+
 	// listen (start app with node server.js) ======================================
 	app.listen(8080);
 	console.log("App listening on port 8080");
+
 
